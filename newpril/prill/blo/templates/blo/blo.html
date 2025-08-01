@@ -1,0 +1,23 @@
+{% extends 'dz/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<h1>Морские животные</h1>
+<h2 class="count">Постов: {{ blos.count }}</h2>
+{% for blo in blos %}
+<div class="element">
+    <h2 class="top">
+        <a href="{% url 'detail' blo.id %}"> {{ blo.title }} </a>
+    </h2>
+    <div class="blo_text">
+        <h5> {{ blo.date|date:'d.m.Y' }}</h5>
+        <div> {{ blo.description|striptags|truncatechars:300}} </div>
+    </div>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

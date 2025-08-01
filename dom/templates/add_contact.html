@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content%}
+<h1>Напишите ваш отзыв</h1>
+
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{ cat }}">{{ msg }}</div>
+{% endfor %}
+
+<form action="{{ url_for('add_contact') }}" method="post">
+  <p>Имя <input type="text" name="name" required></p>
+  <p>Отзыв</p>
+  <p><textarea name="post" cols="40" rows="7"></textarea></p>
+  <p><input type="submit" value="Добавить"></p>
+</form>
+<div class="contact_container">
+<h1 class="heading"> Контакты </h1>
+ <p class="text">Селигер 69</p>
+        <p class="text">Адрес: Осташковский район, д.Залучье, д.20В</p>
+        <p class="text" >Телефон: +7 915 730-16-14</p>
+</div>
+
+
+{% endblock %}
