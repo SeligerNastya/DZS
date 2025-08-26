@@ -2,8 +2,16 @@
 {% block content %}
 <main>
     <div>
-        <h2> Манящий Селигер</h2>
+        {% for uss in us %}
 
+        <div>
+
+            <a href="{% url 'uss' uss.id %}" class="uss"></a>
+                <img src="{{ uss.featured_images.url}} " />
+                <h3> {{ uss.title }}</h3>
+                <div>{{ uss.description }}</div>
+        </div>
+        {% endfor %}
     </div>
 </main>
 
