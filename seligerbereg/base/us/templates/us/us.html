@@ -5,12 +5,18 @@
     <div>
         {% for uss in us %}
 
-        <div>
+        <div class="us__container">
 
             <a href="{% url 'uss' uss.id %}" class="uss"></a>
-                <img src="{{ uss.featured_images.url}} " />
-                <h3> {{ uss.title }}</h3>
-                <div>{{ uss.description }}</div>
+            <h3 class="us__title"> {{ uss.title }}</h3>
+            <div class="us__blockcontainer">
+                <div class="us__block">
+                    <img class="us__thumbnail" src="{{ uss.featured_images.url }} " />
+                </div>
+                <div class="us__block">
+                    <div class="us__description">{{ uss.description }}</div>
+                </div>
+            </div>
         </div>
         {% endfor %}
     </div>
