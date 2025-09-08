@@ -13,11 +13,13 @@ def uss(request, u):
     return render(request, 'us/single-us.html', {'uss': us_obj})
 
 def home(request):
-    hom = Home.objects.all()
+    homs = Home.objects.all()
     contex ={
-        'home': hom
+        'home': homs
     }
     return render(request, "us/home.html", contex)
 def homes(request, hom):
     home_obj = Home.objects.get(id = hom)
-    return  render(request, 'us/single-home.html', {'homes': home_obj})
+
+
+    return  render(request, 'us/single-home.html', {'us': home_obj})

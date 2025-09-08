@@ -3,7 +3,19 @@
 
 <main class="single_home">
     <div class="container">
+ <div>
+        {% for homes in home %}
 
+        <div>
+
+            <a href="{% url 'homes' homes.id %}" class="homes"></a>
+                <img src="{{ homes.featured_images.url}} " />
+                <h3> {{ homes.title }}</h3>
+                <div>{{ homes.description }}</div>
+                <div>{{ homes.price }}</div>
+        </div>
+        {% endfor %}
+    </div>
     </div>
 </main>
 

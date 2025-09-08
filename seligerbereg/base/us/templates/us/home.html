@@ -6,12 +6,12 @@
         {% for homes in home %}
 
         <div>
+            <h3>
+                <a href="{% url 'homes' homes.id %}" class="homes">{{ homes.title }}</a>
+            </h3>
+                <img src="{{ home.featured_images.url}} " />
 
-            <a href="{% url 'homes' homes.id %}" class="homes"></a>
-                <img src="{{ homes.featured_images.url}} " />
-                <h3> {{ homes.title }}</h3>
-                <div>{{ homes.description }}</div>
-                <div>{{ homes.price }}</div>
+
         </div>
         {% endfor %}
     </div>
