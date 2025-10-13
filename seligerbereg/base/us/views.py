@@ -18,6 +18,7 @@ def home(request):
         'home': homs
     }
     return render(request, "us/home.html", contex)
+
 def homes(request, hom):
     home_obj = Home.objects.get(id = hom)
 
