@@ -116,14 +116,13 @@ class AttractionsAdmin(admin.ModelAdmin):
             csv_data = file_data.split("\n")
 
             for x in csv_data:
-                fields = x.split(",")
+                fields = x.split(";")
                 print(fields)
-                Home.objects.update_or_create(
+                Attractions.objects.update_or_create(
                     id=fields[0],
                     title=fields[1],
-                    images=fields[2],
-                    price=fields[3],
-                    description=fields[4]
+                    image=fields[2],
+                    description=fields[3]
 
 
                 )
