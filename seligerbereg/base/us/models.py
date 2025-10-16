@@ -1,17 +1,28 @@
 from django.db import models
 
 class Us(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField(null=True, blank=True)
-    featured_images = models.ImageField(upload_to="us1/%Y/%m/%d/", blank=True)
+    title = models.CharField(max_length=200, verbose_name="название")
+    featured_images = models.ImageField(upload_to="us_images/", blank=True, verbose_name="Изображение")
+    description = models.TextField(null=True, blank=True, verbose_name="Описание")
+
 
     class Meta:
         verbose_name = "Статью"
         verbose_name_plural = "О нас"
 
+class Photo(models.Model):
+    us= models.ForeignKey(Us,on_delete=models.CASCADE,  verbose_name="О нас")
+    add_photo = models.ImageField(upload_to="us_images/add", blank=True, verbose_name="Фото")
+
+    class Meta:
+        verbose_name = "изображение"
+        verbose_name_plural = "изображения о нас"
+
+
+
 class Home(models.Model):
     title = models.CharField(max_length=200, verbose_name="Название дома")
-    images = models.ImageField(upload_to="home", blank=True, verbose_name="Изображение")
+    images = models.ImageField(upload_to="home_images", blank=True, verbose_name="Изображение")
     price = models.DecimalField(max_digits=8, decimal_places=2, default=0, verbose_name="Цена")
     description = models.TextField(null=True, blank=True, verbose_name="Описание")
 
@@ -24,7 +35,7 @@ class Home(models.Model):
 
 
 
-class Photo(models.Model):
+class Photo1(models.Model):
     home = models.ForeignKey(Home,on_delete=models.CASCADE,  verbose_name="Дом")
     add_photo = models.ImageField(upload_to="home_images/add", blank=True, verbose_name="Фото")
 
@@ -42,7 +53,7 @@ class Attractions(models.Model):
         verbose_name = "Статья"
         verbose_name_plural = "Статьи"
 
-class Photo1(models.Model):
+class Photo2(models.Model):
     attractions = models.ForeignKey(Attractions,on_delete=models.CASCADE,  verbose_name="Дом")
     add_photo = models.ImageField(upload_to="attractions_images/add", blank=True, verbose_name="Фото")
 

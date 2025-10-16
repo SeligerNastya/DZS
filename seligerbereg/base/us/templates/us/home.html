@@ -3,7 +3,7 @@
 {% block content %}
 <main>
     <div>
-        {% for homes in home %}
+        {% for home in homes %}
 
         <div>
             <a href="{% url 'homes' homes.id %}" class="homes"></a>

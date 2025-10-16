@@ -1,0 +1,25 @@
+{% extends 'us/base.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <div>
+        {% for attraction in attractions %}
+
+        <div class="us__container">
+
+            <a href="{% url 'attractions' attractions.id %}" class="attractions"></a>
+            <h3 class="us__title"> {{ attractions.title }}</h3>
+            <div class="us__blockcontainer">
+                <div class="us__block">
+                    <img class="us__thumbnail" src="{{ attractions.image.url }} " />
+                </div>
+                <div class="us__block">
+                    <div class="us__description">{{attraction.description }}</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+{% endblock %}
