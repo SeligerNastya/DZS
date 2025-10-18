@@ -12,30 +12,30 @@ def uss(request, u):
     us_obj = Us.objects.get(id=u)
     return render(request, 'us/single-us.html', {'uss': us_obj})
 
-def home(request):
+def homes(request):
     hom = Home.objects.all()
     contex ={
         'home': hom
     }
     return render(request, "us/home.html", contex)
 
-def homes(request, hom):
-    home_obj = Home.objects.get(id = hom)
+def home(request, hom):
+    home_obj = Home.objects.get(id=hom)
 
 
     return  render(request, 'us/single-home.html', {'homes': home_obj})
 
 
-def attractions(request):
-    a = Attractions.objects.all()
+def attraction(request):
+    attr = Attractions.objects.all()
     contex = {
-        'attractions': a
+        'attractions': attr
     }
     return render(request, "us/attractions.html", contex)
-def attraction(request, a):
-    attraction_obj = Attractions.objects.get(id=a)
+def attractions(request, attr):
+    attraction_obj = Attractions.objects.get(id=attr)
     context = {
         'title': attraction_obj.title,
         'attraction': attraction_obj,
         }
-    return render(request, 'us/single-attraction.html', context)
+    return render(request, 'us/single-attractions.html', context)

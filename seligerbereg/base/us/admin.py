@@ -139,7 +139,7 @@ class Photo1Admin(admin.ModelAdmin):
 
     def get_urls(self):
         urls = super().get_urls()
-        new_urls = [path("upload-csv-photo/", self.upload_csv)]
+        new_urls = [path("upload-csv-photo1/", self.upload_csv)]
         return new_urls + urls
 
     def upload_csv(self, request):
@@ -155,7 +155,7 @@ class Photo1Admin(admin.ModelAdmin):
             for x in csv_data:
                 fields = x.split(",")
                 print(fields)
-                Photo.objects.update_or_create(
+                Photo1.objects.update_or_create(
                     id=fields[0],
                     home=Home(fields[1]),
                     add_photo=fields[2][:-1]
@@ -217,7 +217,7 @@ class Photo2Admin(admin.ModelAdmin):
 
     def get_urls(self):
         urls = super().get_urls()
-        new_urls = [path("upload-csv-photo/", self.upload_csv)]
+        new_urls = [path("upload-csv-photo2/", self.upload_csv)]
         return new_urls + urls
 
     def upload_csv(self, request):
@@ -233,9 +233,9 @@ class Photo2Admin(admin.ModelAdmin):
             for x in csv_data:
                 fields = x.split(",")
                 print(fields)
-                Photo.objects.update_or_create(
+                Photo2.objects.update_or_create(
                     id=fields[0],
-                    home=Home(fields[1]),
+                    home=Attractions(fields[1]),
                     add_photo=fields[2][:-1]
 
                 )

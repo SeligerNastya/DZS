@@ -4,12 +4,12 @@
 <main class="single_home">
     <div class="container">
  <div>
-        {% for homes in home %}
+        {% for home in homes %}
 
         <div>
 
             <a href="{% url 'homes' homes.id %}" class="homes"></a>
-                <img src="{{ homes.featured_images.url}} " />
+                <img src="{{ homes.images.url}} " />
                 <h3> {{ homes.title }}</h3>
                 <div>{{ homes.description }}</div>
                 <div>{{ homes.price }}</div>

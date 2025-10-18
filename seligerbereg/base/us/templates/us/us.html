@@ -7,8 +7,8 @@
 
         <div class="us__container">
 
-            <a href="{% url 'uss' uss.id %}" class="uss"></a>
-            <h3 class="us__title"> {{ uss.title }}</h3>
+            <a href="{% url 'uss' uss.id %}" class="uss"><h3 class="us__title"> {{ uss.title }}</h3></a>
+
             <div class="us__blockcontainer">
                 <div class="us__block">
                     <img class="us__thumbnail" src="{{ uss.featured_images.url }} " />
