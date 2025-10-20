@@ -1,24 +1,31 @@
 {% extends 'us/base.html' %}
 {% load static %}
-{% block css %}
-    <link href="{% static 'styles/home.css' %}" rel="stylesheet">
-{% endblock %}
+
 
 {% block content %}
 <main>
-    <div>
+    <h2 class="title"> Дома </h2>
+    <div class="block">
         {% for homes in home %}
 
-        <div class="us__container">
 
-            <a href="{% url 'home' homes.id %}" class="attractions"></a>
-            <h3 class="us__title"> {{ homes.title }}</h3>
-            <div class="us__blockcontainer">
-                <div class="us__block">
-                    <img class="us__thumbnail" src="{{ homes.images.url }} " />
-                </div>
-                <div class="us__block">
-                    <div class="us__description">{{homes.description }}</div>
+        <div class="homes__block">
+
+
+
+            <div class="homes__container">
+                <div class="homes">
+                    <div class="homes__top">
+                         <a href="{% url 'home' homes.id %}" class="homes">
+                        <img class="homes__images easy-zoom-effect" src="{{ homes.images.url }} " />
+                         </a>
+                    </div>
+                    <div class="homes__botoom">
+                        <a href="{% url 'home' homes.id %}" class="homes">
+                        <h5 class="homes__price" > {{ homes.price }} руб.</h5>
+                        <h3 class="homes__title"> {{ homes.title }}</h3>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

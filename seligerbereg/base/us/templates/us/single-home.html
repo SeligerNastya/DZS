@@ -3,19 +3,23 @@
 
 <main class="single_home">
     <div class="container">
- <div>
-        {% for home in homes %}
+         <div>
 
-        <div>
 
-            <a href="{% url 'homes' homes.id %}" class="homes"></a>
-                <img src="{{ homes.images.url}} " />
-                <h3> {{ homes.title }}</h3>
-                <div>{{ homes.description }}</div>
-                <div>{{ homes.price }}</div>
-        </div>
-        {% endfor %}
-    </div>
+                <div>
+
+                        <img src="{{ homes.images.url}} " />
+                        <div class="center">
+                            {% for img in homes.photo_set.all %}
+                            <img src="{{ img.add_photo.url }}" alt="" class="small">
+                            {% endfor %}
+                        </div>
+                        <h3> {{ homes.title }}</h3>
+                        <div>{{ homes.description|safe }}</div>
+                        <div>{{ homes.price }}</div>
+                </div>
+
+         </div>
     </div>
 </main>
 

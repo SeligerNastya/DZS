@@ -14,7 +14,7 @@
                     <img class="us__thumbnail" src="{{ uss.featured_images.url }} " />
                 </div>
                 <div class="us__block">
-                    <div class="us__description">{{ uss.description }}</div>
+                    <div class="us__description">{{ uss.description|safe }}</div>
                 </div>
             </div>
         </div>
