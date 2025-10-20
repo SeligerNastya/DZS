@@ -1,26 +1,41 @@
 {% extends 'us/base.html' %}
 {% block content %}
 
-<main class="single_home">
-    <div class="container">
-         <div>
+<div class="container__home">
 
 
-                <div>
+        </div>
+        <!-- /.col-lg-3 -->
 
-                        <img src="{{ homes.images.url}} " />
-                        <div class="center">
-                            {% for img in homes.photo_set.all %}
-                            <img src="{{ img.add_photo.url }}" alt="" class="small">
-                            {% endfor %}
-                        </div>
-                        <h3> {{ homes.title }}</h3>
-                        <div>{{ homes.description|safe }}</div>
-                        <div>{{ homes.price }}</div>
+        <div class="block_home">
+			<div class="row">
+                <h1 class="title__home">{{ homes.title }}</h1>
+                <div class="home__img" >
+                    <img src="{{ homes.images.url }}" alt="" class="big">
+                    <br>
+                    <div class="center">
+                        {% for img in homes.photo_set.all %}
+                        <img src="{{ img.add_photo.url }}" alt="" class="small">
+                        {% endfor %}
+                    </div>
                 </div>
+                <div class="col-lg-7">
 
-         </div>
+
+                    <h2 class="homes__price">{{ homes.price }}руб.</h2>
+
+<!--                    <h4 class="basket"><a href="#">В КОРЗИНУ</a></h4>-->
+
+                    <div class="homes__description">
+					{{ homes.description|safe }}
+					</div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-</main>
+
+</div>
 
 {% endblock %}

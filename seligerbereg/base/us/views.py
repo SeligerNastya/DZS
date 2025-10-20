@@ -39,3 +39,6 @@ def attractions(request, attr):
         'attraction': attraction_obj,
         }
     return render(request, 'us/single-attractions.html', context)
+
+def contact(request):
+    return render(request,'us/contact.html',{'contact': contact} )

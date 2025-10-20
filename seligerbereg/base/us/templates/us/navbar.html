@@ -1,6 +1,6 @@
 <header class="header">
     {% load static %}
-    <div class="container">
+    <div class="container__header">
       <a href="/" class="header__logo">
         <img src="{% static 'images/logosb.webp' %}" alt="" />
       </a>
@@ -10,7 +10,7 @@
               <li class="header_item"><a href="{% url 'us' %}">О нас</a></li>
               <li class="header_item"><a href="{% url 'homes' %}">Дома</a></li>
               <li class="header_item"><a href="{% url 'attraction' %}">Достопримечательности</a></li>
-              <li class="header_item"><a href="">Отзывы</a></li>
+              <li class="header_item"><a href="{% url 'contact' %}">Контакты</a></li>
           </ul>
 
 

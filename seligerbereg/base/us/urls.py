@@ -8,5 +8,6 @@ urlpatterns = [
     path('home/<str:hom>/', views.home, name="home" ),
     path('attraction/', views.attraction, name="attraction" ),
     path('attractions/<int:attr>/', views.attractions, name="attractions"),
+    path('contact/', views.contact, name="contact")
 
 ]

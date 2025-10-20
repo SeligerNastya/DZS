@@ -45,26 +45,27 @@ class Photo1(models.Model):
     add_photo = models.ImageField(upload_to="home_images/add/", blank=True, verbose_name="Фото")
 
     class Meta:
-        verbose_name = "изображение"
-        verbose_name_plural = "изображения"
+        verbose_name = "изображение дома"
+        verbose_name_plural = "изображения домов"
 
 
 class Attractions(models.Model):
     title = models.CharField(max_length=200, verbose_name="Достопримечательность")
     image = models.ImageField(upload_to="attractions_images/", blank=True, verbose_name="Изображение")
     description = models.TextField( blank=True, verbose_name="Описание")
+    address = models.TextField(blank=True, verbose_name="Адрес")
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name = "Статья"
-        verbose_name_plural = "Статьи"
+        verbose_name = "Достопримечательность"
+        verbose_name_plural = "Достопримечательности"
 
 class Photo2(models.Model):
     attractions = models.ForeignKey(Attractions,on_delete=models.CASCADE,  verbose_name="Достопримечательность")
     add_photo = models.ImageField(upload_to="attractions_images/add/", blank=True, verbose_name="Фото")
 
     class Meta:
-        verbose_name = "изображение "
-        verbose_name_plural = "изображения достопримечательности"
+        verbose_name = "изображение достопримечательности "
+        verbose_name_plural = "изображения достопримечательностей"

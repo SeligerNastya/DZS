@@ -201,7 +201,8 @@ class AttractionsAdmin(admin.ModelAdmin):
                     id=fields[0],
                     title=fields[1],
                     image=fields[2],
-                    description=fields[3]
+                    description=fields[3],
+                    address=fields[4]
 
 
                 )
