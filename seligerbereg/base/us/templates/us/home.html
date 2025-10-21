@@ -5,7 +5,7 @@
 {% block content %}
 <div>
     <h2 class="title__home"> Дома </h2>
-    <div class="block">
+            <div class="block">
         {% for homes in home %}
 
 
@@ -22,8 +22,8 @@
                     </div>
                     <div class="homes__botoom">
                         <a href="{% url 'home' homes.id %}" class="homes">
-                        <h5 class="homes__price" > {{ homes.price }} руб.</h5>
-                        <h3 class="homes__title"> {{ homes.title }}</h3>
+                        <h5 class="homes__price easy-zoom-effect" > {{ homes.price }} руб.</h5>
+                        <h3 class="homes__title easy-zoom-effect"> {{ homes.title }}</h3>
                         </a>
                     </div>
                 </div>

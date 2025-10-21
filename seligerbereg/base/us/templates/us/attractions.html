@@ -2,21 +2,30 @@
 {% load static %}
 {% block content %}
 <main>
-    <div>
+    <div class="block">
         {% for attraction in attractions %}
 
-        <div class="us__container">
-
-            <a href="{% url 'attractions' attraction.id %}" class="attractions"></a>
-            <h3 class="us__title"> {{ attractions.title }}</h3>
-            <div class="us__blockcontainer">
-                <div class="us__block">
-                    <img class="us__thumbnail" src="{{ attraction.image.url }} " />
+        <div class="attractions">
+            <div class="attractions__container">
+                <div class="attractions__top">
+                    <div class="attractions__titl ">
+                        <a href="{% url 'attractions' attraction.id %}" class="attractions">
+                            <h3 class="attractions__title easy-zoom-effect">{{ attraction.title }}</h3>
+                        </a>
+                    </div>
+                    <div class="attractions__img">
+                        <a href="{% url 'attractions' attraction.id %}">
+                            <img class="attractions__images easy-zoom-effect"  src="{{ attraction.image.url }} " />
+                        </a>
+                    </div>
                 </div>
-                <div class="us__block">
-                    <div class="us__description">{{attraction.description|safe }}</div>
+                <div class="attractions__botoom">
+                    <a href="{% url 'attractions' attraction.id %}">
+                        <div class="attractions__description">{{attraction.description|truncatechars:100|safe }}</div>
+                    </a>
                 </div>
             </div>
+
         </div>
         {% endfor %}
     </div>
